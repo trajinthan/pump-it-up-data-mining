@@ -1,7 +1,9 @@
 # pump-it-up-data-mining-challenge
-github repo link: https://github.com/trajinthan/pump-it-up-data-mining
+Github repo link: https://github.com/trajinthan/pump-it-up-data-mining
 
-competition link: https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/
+Competition link: https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/
+
+Submission score in the competition for the last git commit is 0.8088 
 
 **Techniques Applied**
 
@@ -31,19 +33,28 @@ competition link: https://www.drivendata.org/competitions/7/pump-it-up-data-mini
 
 5. Features 'amount_tsh' and 'num_private' contains most number of '0's as values
 
-***2. Preprocessing***
+***2. Preprocessing & Feature Engineering***
 
 1. Dropped unnecessary columns
    - identical or similar columns with less information
    - 'recorded_by' as it has only one distinct value for all ids
    - Dropped 'amount_tsh' and 'num_private'
 
-2. Replaced null/missing values 
+2. Created new columns 'date_recorded_month' and 'date_recorded_year' from the feature 'date_recorded'
+
+3. Replaced 0 values in the feature 'longitude' with the mean value of the same feature
+
+4. Replaced null/missing values 
    - for categorical columns, replaced with ('n/a') as theose columns have very few null values
    - for features 'permit' and 'public_meeting' replaced with most occuring value
       - In those features the count value 'true' is very higher than the count of value 'false'. So           replaced the null values with 'true'
 
-3. Encoded categorical columns
+5. Encoded categorical columns
    - applied label encoding for categorical features
 
-        
+ ***3. Model selection***
+- Analyzed CATboost, XGBoost and RandomForest classifiers
+- Tuned parameters using GridSearchCV
+- Plotted feature importance graph
+
+RandomForest classifier resulted in accuracy of 0.82
