@@ -42,7 +42,7 @@ Submission score in the competition for the last git commit is 0.8088
 
 2. Created new columns 'date_recorded_month' and 'date_recorded_year' from the feature 'date_recorded'
 
-3. Replaced 0 values in the feature 'longitude' with the mean value of the same feature
+3. Replaced 0 values(outliers) in the feature 'longitude' with the mean value of the same feature
 
 4. Replaced null/missing values 
    - for categorical columns, replaced with ('n/a') as theose columns have very few null values
